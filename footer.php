@@ -136,7 +136,7 @@ if (get_field('gtm_property', 'options')) {
             <div class="modal-header">
                 <h5 class="modal-title" id="donateModalLabel">Donate</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true"><i class="fas fa-times"></i></span>
                 </button>
             </div>
             <div class="modal-body">
