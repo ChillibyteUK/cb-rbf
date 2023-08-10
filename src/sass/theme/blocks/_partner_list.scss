@@ -1,0 +1,47 @@
+.partners {
+    #partnerIndex {
+        display: flex;
+        margin-bottom: 2rem;
+        a {
+            display: flex;
+            width: 40px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--rbf-blue-900);
+            margin-right: 1rem;
+            text-decoration: none;
+            font-weight: 500;
+            line-height: 1;
+            transition: all 0.2s ease-in;
+            &:hover {
+                background-color: var(--rbf-blue-900);
+                color: white;
+            }
+        }
+    }
+    .partner {
+        border-bottom: 1px solid var(--rbf-blue-900);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        &__quote {
+            margin-bottom: 1rem;
+            font-size: 1.111rem;
+            font-style: italic;
+            &::before, &::after {
+                content: '"';
+            }
+        }
+        &__attr {
+            font-weight: 500;
+        }
+        &__link {
+            text-align: right;
+            a {
+                color: var(--rbf-grey);
+                font-weight: 500;
+                font-size: 0.889rem;
+            }
+        }
+    }
+}

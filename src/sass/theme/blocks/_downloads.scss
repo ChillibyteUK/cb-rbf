@@ -1,0 +1,67 @@
+.downloads {
+    &__card {
+        text-decoration: none;
+        display: block;
+        border: 1px solid rgba(0,0,0,.125);
+        padding: 1rem 1rem 2rem 1rem;
+        height: 100%;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1rem;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+        img {
+            min-height: 230px;
+            object-fit: contain;
+        }
+    }
+    &__title {
+        --lh: 1.4rem;
+        --max-lines: 2;
+        @media (min-width:1200px) {
+            --lh: 1.2rem;
+        }
+        font-size: var(--lh);
+        min-height: calc(var(--lh) * var(--max-lines));
+    }
+    &__meta {
+        display: flex;
+        justify-content: space-between;
+        --fs: 1rem;
+        @media (min-width:1200px) {
+            --fs: 0.889rem;
+        }
+        font-size: var(--fs);
+    }
+}
+.downloads--default {
+    .downloads__title {
+        color: var(--rbf-blue-900);
+    }
+    .downloads__card::after {
+        background-image: url(../img/bottom--default.svg);
+    }
+}
+.downloads--donate {
+    .downloads__title {
+        color: var(--rbf-purple-900);
+    }
+    .downloads__card::after {
+        background-image: url(../img/bottom--donate.svg);
+    }
+}
+.downloads--support {
+    .downloads__title {
+        color: var(--rbf-green-900);
+    }
+    .downloads__card::after {
+        background-image: url(../img/bottom--support.svg);
+    }
+}

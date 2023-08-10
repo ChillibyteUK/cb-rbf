@@ -1,0 +1,21 @@
+.banner {
+    background-color: var(--rbf-blue-700);
+    padding: 0.25rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    .ticker {
+        &__item {
+            color: white;
+            text-decoration: none;
+            &::after {
+                content: "\f105";
+                font-family: 'Font Awesome 6 Free';
+                margin-left: 0.5rem;
+                transition: margin 0.2s ease-in-out;
+            }
+            &:hover::after {
+                margin-left: 1rem;
+            }
+        }
+    }
+}

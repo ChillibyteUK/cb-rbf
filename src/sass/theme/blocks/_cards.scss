@@ -1,0 +1,19 @@
+.cbcards {
+    .cbcard {
+        height: 100%;
+        border: 1px solid rgba(0,0,0,.125);
+        padding: 1rem;
+    }
+}
+
+.app {
+    &__card {
+        text-align: center;
+        img {
+            transition: all 0.2s ease-in;
+        }
+        a:hover img {
+            transform: translateY(2px);
+        }
+    }
+}

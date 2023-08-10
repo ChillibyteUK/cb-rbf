@@ -1,0 +1,129 @@
+main .quicklinks { // main needed to prevent conflict with wp-admin bar
+    position: relative;
+    .quicklinks__card {
+        padding: 1rem;
+        color: white;
+        border-radius: 0.25rem;
+        // border: 1px solid #007496;
+        position: sticky;
+        top: 120px;
+        width: 100%;
+        margin-left: 1rem;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        li {
+            font-size: 0.889rem;
+            list-style: none;
+            border-bottom: 1px solid white;
+            padding: 0.25rem 0;
+            position: relative;
+            &::after {
+                content: "\f105";
+                font-family: "Font Awesome 6 Free";
+                position: absolute;
+                right: 5px;
+                transition: all 0.3s ease;
+            }
+            &:hover::after {
+                right: 0;
+            }
+        }
+    }
+    .quicklinks__card--default {
+        background-color: var(--rbf-blue-700);
+    }
+    .quicklinks__card--support {
+        background-color: var(--rbf-green-700);
+    }
+    .quicklinks__card--donate {
+        background-color: var(--rbf-purple-700);
+    }
+
+    .story {
+        margin: 2rem 0 2rem 0;
+        position: relative;
+        &__content {
+            padding: 1rem 1rem 1rem 2rem;
+            position: relative;
+            font-style: italic;
+            font-size: 1.2rem;
+            &::before {
+                // content: '"'; //"\f10d";
+                // font-family: "Font Awesome 6 Free";
+                // font-style: normal;
+                font-size: 4rem;
+                line-height: 1;
+                position: absolute;
+                left: 1rem;
+                top: 1rem;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1rem;
+            bottom: 0;
+            left: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    &--default {
+        .story {
+            color: var(--rbf-blue-900);
+            background-color: var(--rbf-blue-300);
+            &::after {
+                background-image: url("../img/bottom--default.svg");
+            }
+        }
+    }
+    &--support {
+        .story {
+            color: var(--rbf-green-900);
+            background-color: var(--rbf-green-300);
+            &::after {
+                background-image: url("../img/bottom--support.svg");
+            }
+        }
+    }
+    &--donate {
+        .story {
+            color: var(--rbf-purple-900);
+            background-color: var(--rbf-purple-300);
+            &::after {
+                background-image: url("../img/bottom--donate.svg");
+            }
+        }
+    }
+}
+.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
+.has-bg.quicklinks {
+    &::after {
+        position: absolute;
+        content: "";
+        background-image: url("../img/bottom--default.svg");
+        height: 1rem;
+        width: 100%;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &--donate::after {
+        background-image: url("../img/bottom--donate.svg");
+    }
+    &--support::after {
+        background-image: url("../img/bottom--support.svg");
+    }
+}

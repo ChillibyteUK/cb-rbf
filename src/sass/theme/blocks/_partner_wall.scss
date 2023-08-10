@@ -1,0 +1,22 @@
+.partner_wall {
+    &__container {
+        cursor: pointer;
+        column-count: 2;
+        column-gap: 10px;
+        max-width: 800px;
+        margin: auto;
+        @media (min-width:768px) {
+            column-count: 3;
+        }
+        @media (min-width:992px) {
+            column-count: 4;
+        }
+    }
+    &__logo {
+        padding: 1rem;
+        width: 100%;
+        max-width: 250px;
+        margin: auto;
+        text-align: center;
+    }
+}

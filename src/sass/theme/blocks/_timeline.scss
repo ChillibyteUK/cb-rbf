@@ -1,0 +1,95 @@
+.timeline {
+
+    $primary: #212121;
+    $background: #111;
+    $font: sans-serif;
+    $borders: orangered;
+
+    margin: 20px auto;
+    padding: 20px;
+
+    .outer {
+        max-width: 600px;
+        margin: auto;
+    }
+  
+    &__card {
+        position: relative;
+        &:nth-child(odd) {
+            padding: 30px 0 30px 30px;
+            &::before {
+                top: -5px;
+                bottom: -4px;
+                left: 0px;
+                border-width: 5px 0 5px 5px;
+                border-radius: 1.5rem 0 0 1.5rem;
+                // @media (min-width:400px) {
+                //     top: -5px;
+                //     bottom: -4px;
+                // }
+            }
+        }
+        &:nth-child(even) {
+            padding: 30px 30px 30px 0;
+            &::before {
+                right: 0;
+                top: -1px;
+                bottom: 0px;
+                border-width: 5px 5px 5px 0;
+                border-radius: 0 1.5rem 1.5rem 0;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 50%;
+            border: solid var(--rbf-blue-900);
+        }
+        &:first-child::before {
+            border-top: 0;
+            border-top-left-radius: 0;
+        }
+        &:last-child:nth-child(odd)::before {
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+        }
+        &:last-child:nth-child(even)::before {
+            border-bottom: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:nth-child(even) > .timeline__info > .timeline__title {
+            text-align: right;
+        }
+        &:nth-child(odd) > .timeline__info > .timeline__title::before {
+            left: -47px;
+        }
+        &:nth-child(even) > .timeline__info > .timeline__title::before {
+            right: -47px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        color: black;
+        border: 1px solid var(--rbf-blue-700);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    &__title {
+        color: var(--rbf-blue-900);
+        position: relative;
+        margin-bottom: 1rem;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            border-radius: 999px;
+            border: 3px solid var(--rbf-blue-900);
+        }
+    }
+}
