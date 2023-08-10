@@ -130,6 +130,25 @@ if (get_field('gtm_property', 'options')) {
     <?php
 }
 ?>
+<div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="donateModalLabel">Donate</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="CAFDonateWidgetContainer"></div>
+                <script type="text/javascript">
+                    var caf_BeneficiaryCampaignId=23368;
+                    document.write(unescape('%3Cscript id="CAFDonateWidgetLoader_script" src="https://cafdonate.cafonline.org/js/CAF.DonateWidgetLoader_script.js" type="text/javascript"%3E%3C/script%3E'));
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

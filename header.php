@@ -111,7 +111,8 @@ do_action('wp_body_open');
                                 <input type="text" name="s" placeholder="" style="font-family:Roboto,Arial,FontAwesome">
                             </form>
                         </div>
-                        <a class="btn btn-donate" href="https://checkout.justgiving.com/c/15034" target="_blank">DONATE</a>
+                        <button class="btn btn-donate" type="button" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE</button>
+                        <!-- <a class="btn btn-donate" href="https://checkout.justgiving.com/c/15034" target="_blank">DONATE</a> -->
                     </div>
                     <?php
                             wp_nav_menu(
