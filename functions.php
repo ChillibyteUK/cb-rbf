@@ -92,3 +92,10 @@ function understrap_child_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
 
 
+// add_filter( 'dearpdf_post_type_args', 'rewrite_dearpdf');
+// function rewrite_dearpdf ( $args ) {
+//     $args['rewrite']['slug'] = 'documents';
+//     $args['rewrite']['with_front'] = false;
+//     $args['has_archive'] = true;
+//     return $args;
+// };
