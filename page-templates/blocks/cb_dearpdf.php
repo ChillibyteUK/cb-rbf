@@ -32,14 +32,14 @@
                 <div class="downloads__card">
                     <div class="mb-2"><img src="<?=$image?>"></div>
                     <h3 class="downloads__title"><?=get_the_title()?>
-                        <div class="d-flex justify-content-around">
-                            <span data-bs-toggle="modal"
-                                data-bs-target="#modal<?=$fileID?>"><i
-                                    class="fa-solid fa-eye"></i></span>
-                            <a href="<?=$link?>" download><i
-                                    class="fa-solid fa-download"></i></a>
-                        </div>
                     </h3>
+                    <div class="d-flex justify-content-around">
+                        <span data-bs-toggle="modal"
+                            data-bs-target="#modal<?=$fileID?>"><i
+                                class="fa-solid fa-eye"></i></span>
+                        <a href="<?=$link?>" download><i
+                                class="fa-solid fa-download"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="modal full-modal fade" id="modal<?=$fileID?>"
