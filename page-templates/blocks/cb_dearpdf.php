@@ -35,10 +35,14 @@
                     </h3>
                     <div class="d-flex justify-content-around">
                         <span data-bs-toggle="modal"
-                            data-bs-target="#modal<?=$fileID?>"><i
-                                class="fa-solid fa-eye"></i></span>
-                        <a href="<?=$link?>" download><i
-                                class="fa-solid fa-download"></i></a>
+                            data-bs-target="#modal<?=$fileID?>">
+                            <i class="fa-solid fa-eye"></i>
+                            <div>View</div>
+                        </span>
+                        <a href="<?=$link?>" download>
+                            <i class="fa-solid fa-download"></i>
+                            <div>Download (xxxMb)</div>
+                        </a>
                     </div>
                 </div>
             </div>
