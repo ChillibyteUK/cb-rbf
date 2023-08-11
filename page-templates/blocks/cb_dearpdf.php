@@ -27,21 +27,27 @@
             $fileID = get_field('pdf', get_the_ID());
             $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
             $link = wp_get_attachment_url($fileID);
+            $size = filesize(get_attached_file($ID));
+            $fsize = formatBytes($size);
             ?>
             <div class="col-md-6 col-lg-3 col-xl-2">
                 <div class="downloads__card">
                     <div class="mb-2"><img src="<?=$image?>"></div>
-                    <h3 class="downloads__title"><?=get_the_title()?>
+                    <h3 class="downloads__title mb-2">
+                        <?=get_the_title()?>
                     </h3>
-                    <div class="d-flex justify-content-around">
+                    <div class="d-flex justify-content-between">
                         <span data-bs-toggle="modal"
-                            data-bs-target="#modal<?=$fileID?>">
+                            data-bs-target="#modal<?=$fileID?>"
+                            class="text-center">
                             <i class="fa-solid fa-eye"></i>
-                            <div>View</div>
+                            <div class="text-center fs-7">View</div>
                         </span>
-                        <a href="<?=$link?>" download>
+                        <a href="<?=$link?>" download
+                            class="text-center">
                             <i class="fa-solid fa-download"></i>
-                            <div>Download (xxxMb)</div>
+                            <div class="text-center fs-7">
+                                (<?=$fsize?>)</div>
                         </a>
                     </div>
                 </div>
