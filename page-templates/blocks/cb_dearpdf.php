@@ -4,7 +4,7 @@
         $term = get_field('doc_type');
         if (get_field('show_title')[0] == 'Yes') {
             ?>
-        <h2 class="lined has-default-color"><?=$term->name?></h2>
+        <h2 class="h3 lined has-default-color"><?=$term->name?></h2>
         <?php
         }
         ?>
