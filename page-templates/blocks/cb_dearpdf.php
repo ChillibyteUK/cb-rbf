@@ -27,7 +27,7 @@
             $fileID = get_field('pdf', get_the_ID());
             $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
             $link = wp_get_attachment_url($fileID);
-            $size = filesize(get_attached_file($ID));
+            $size = filesize(get_attached_file($fileID));
             $fsize = formatBytes($size);
             ?>
             <div class="col-md-6 col-lg-3 col-xl-2">
@@ -36,10 +36,10 @@
                     <h3 class="downloads__title mb-2">
                         <?=get_the_title()?>
                     </h3>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between has-default-color">
                         <span data-bs-toggle="modal"
                             data-bs-target="#modal<?=$fileID?>"
-                            class="text-center">
+                            class="text-center view">
                             <i class="fa-solid fa-eye"></i>
                             <div class="text-center fs-7">View</div>
                         </span>
@@ -73,6 +73,14 @@
 <style>
     .downloads__card {
         padding-bottom: 1rem !important;
+    }
+
+    .downloads__card a {
+        text-decoration: none;
+    }
+
+    .downloads__card .view {
+        cursor: pointer;
     }
 
     .full-modal {
