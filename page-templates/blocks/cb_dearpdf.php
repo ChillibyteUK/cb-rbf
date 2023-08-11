@@ -26,12 +26,19 @@
             $q->the_post();
             $fileID = get_field('pdf', get_the_ID());
             $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
+            $link = wp_get_attachment_url($fileID);
             ?>
             <div class="col-md-6 col-lg-3 col-xl-2">
-                <div class="downloads__card" data-bs-toggle="modal"
-                    data-bs-target="#modal<?=$fileID?>">
+                <div class="downloads__card">
                     <div class="mb-2"><img src="<?=$image?>"></div>
                     <h3 class="downloads__title"><?=get_the_title()?>
+                        <div class="d-flex justify-content-around">
+                            <span data-bs-toggle="modal"
+                                data-bs-target="#modal<?=$fileID?>"><i
+                                    class="fa-solid fa-eye"></i></span>
+                            <a href="<?=$link?>" download><i
+                                    class="fa-solid fa-download"></i></a>
+                        </div>
                     </h3>
                 </div>
             </div>
