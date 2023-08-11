@@ -1,12 +1,7 @@
-<section class="dearpdf">
+<section class="dearpdf downloads downloads--default">
     <div class="container-xl">
         <?php
         $term = get_field('doc_type');
-        if (get_field('show_title')[0] == 'Yes') {
-            ?>
-        <h2 class="lined has-default-color"><?=$term->name?></h2>
-        <?php
-        }
         ?>
         <div class="row g-3">
             <?php
@@ -22,11 +17,32 @@
                     )
                 ));
 
+        $first = true;
         while ($q->have_posts()) {
             $q->the_post();
             $fileID = get_field('pdf', get_the_ID());
-            $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
-            ?>
+
+            if ($first === true) {
+                ?>
+            <div class="container-xl px-2">
+                <?=get_field('intro')?>
+            </div>
+            <?php
+                echo do_shortcode('[dearpdf id="' . get_the_ID() . '"][/dearpdf]');
+                ?>
+            <section class="buttons py-4">
+                <div class="d-flex justify-content-center gap-4">
+                    <a href="mailto:fundraising@railwaybenefitfund.org.uk" target="_blank" class="btn btn-default"
+                        aria-label="mailto:fundraising@railwaybenefitfund.org.uk">Request Physical Copies</a>
+                </div>
+            </section>
+            <h3 class="lined has-default-color">Previous Editions</h3>
+            <?php
+                    $first = false;
+            } else {
+
+                $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
+                ?>
             <div class="col-md-6 col-lg-3 col-xl-2">
                 <div class="downloads__card" data-bs-toggle="modal"
                     data-bs-target="#modal<?=$fileID?>">
@@ -48,6 +64,7 @@
                 </div>
             </div>
             <?php
+            }
         }
         ?>
         </div>
