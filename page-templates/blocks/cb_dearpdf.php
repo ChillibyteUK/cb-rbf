@@ -1,4 +1,4 @@
-<section class="dearpdf">
+<section class="dearpdf downloads downloads--default pb-5">
     <div class="container-xl">
         <?php
         $term = get_field('doc_type');
