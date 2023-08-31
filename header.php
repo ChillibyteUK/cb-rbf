@@ -100,7 +100,8 @@ do_action('wp_body_open');
             <div class="container-xl">
                 <div class="d-none d-sm-block mb-0 me-lg-5"><a href="/" aria-title="Home"><img class="logo" src="<?=get_stylesheet_directory_uri()?>/img/rbf-logo--colour.svg"></a></div>
                 <div class="d-sm-none mb-0 me-lg-5"><a href="/" aria-title="Home"><img class="logo" src="<?=get_stylesheet_directory_uri()?>/img/rbf-logo--icon.svg"></a></div>
-                <a class="d-lg-none btn btn-donate" href="https://checkout.justgiving.com/c/15034" target="_blank">DONATE</a>
+                <button class="d-lg-none btn btn-donate" type="button" data-bs-toggle="modal" data-bs-target="#donateModal">DONATE</button>
+                <!-- <a class="d-lg-none btn btn-donate" href="https://checkout.justgiving.com/c/15034" target="_blank">DONATE</a> -->
                 <button class="navbar-toggler mt-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Navigation">
                     <i class="fa fa-navicon" aria-hidden="true"></i>
                 </button>
