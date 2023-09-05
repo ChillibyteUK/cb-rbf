@@ -3,7 +3,7 @@
         <?php
         $term = get_field('doc_type');
         ?>
-        <div class="row g-3">X
+        <div class="row g-3">
             <?php
                 $q = new WP_Query(array(
                     'post_type' => 'dearpdf',
@@ -49,7 +49,7 @@
             } else {
 
                 if (!get_field('show_previous')) {
-                    return;
+                    continue;
                 }
 
                 $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
