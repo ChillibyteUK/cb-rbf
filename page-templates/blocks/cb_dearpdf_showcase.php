@@ -3,7 +3,7 @@
         <?php
         $term = get_field('doc_type');
         ?>
-        <div class="row g-3">
+        <div class="row g-3">X
             <?php
                 $q = new WP_Query(array(
                     'post_type' => 'dearpdf',
@@ -29,17 +29,28 @@
             </div>
             <?php
                 echo do_shortcode('[dearpdf id="' . get_the_ID() . '"][/dearpdf]');
-                ?>
+                if (get_field('show_button')) {
+                    ?>
             <section class="buttons py-4">
                 <div class="d-flex justify-content-center gap-4">
                     <a href="mailto:fundraising@railwaybenefitfund.org.uk" target="_blank" class="btn btn-default"
                         aria-label="mailto:fundraising@railwaybenefitfund.org.uk">Request Physical Copies</a>
                 </div>
             </section>
+                    <?php
+                }
+                if (get_field('show_previous')) {
+                    ?>
             <h3 class="lined has-default-color">Previous Editions</h3>
-            <?php
-                    $first = false;
+                    <?php
+                }
+
+                $first = false;
             } else {
+
+                if (!get_field('show_previous')) {
+                    return;
+                }
 
                 $image = wp_get_attachment_image_url($fileID, 'medium') ?: '/wp-content/themes/cb-rbf/img/rbf-placeholder-a4.png';
                 $link = wp_get_attachment_url($fileID);

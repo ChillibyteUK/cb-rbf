@@ -12,13 +12,61 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_64f71c7e31f9f",
+            "label": "Show Button",
+            "name": "show_button",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes"
+            },
+            "default_value": [],
+            "return_format": "",
+            "allow_custom": 0,
+            "layout": "",
+            "toggle": 0,
+            "save_custom": 0
+        },
+        {
+            "key": "field_64f71c9b31fa0",
+            "label": "Show Previous",
+            "name": "show_previous",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes"
+            },
+            "default_value": [],
+            "return_format": "",
+            "allow_custom": 0,
+            "layout": "",
+            "toggle": 0,
+            "save_custom": 0
         },
         {
             "key": "field_64d6071765a88",
@@ -84,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691749418
+    "modified": 1693916328
 }
