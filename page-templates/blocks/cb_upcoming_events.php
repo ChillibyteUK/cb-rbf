@@ -1,41 +1,28 @@
 <?php
-    $today = date("Ymd");
-    ?>
+
+$showForm = true;
+
+if (get_field('events')) { // events have been selected
+
+    $q = new WP_Query(array(
+        'post_type' => 'post',
+        'post__in' => get_field('events')
+    ));
+
+    if ($q->have_posts()) { // posts exist
+        $showForm = false;
+?>
+<style>
+.contact, .hide-me { display: none; }
+.slick-track { margin-left: 0 !important; }
+</style>
 <!-- upcoming_events -->
-<section class="latest_news py-5">
+<section class="latest_news pb-5">
     <div class="container">
-        <h2 class="lined has-donate-color mb-4">Upcoming Events</h2>
+        <h2 class="lined has-donate-color mb-4">Volunteer</h2>
         <div class="slider mb-4" id="slider-events">
             <?php
-                $q = new WP_Query(array(
-                    'post_type' => 'post',
-                    'posts_per_page' => '6',
-                    'post_status' => 'publish',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'category',
-                            'field'    => 'slug',
-                            'terms'    => 'event',
-                            'operator' => 'IN'
-                        )
-                    ),
-                    'meta_query' => array(
-                        'relation' => 'OR',
-                        array(
-                            'key' => 'start_date',
-                            'value' => $today,
-                            'compare' => '>='
-                        ),
-                        array(
-                            'key' => 'end_date',
-                            'value' => $today,
-                            'compare' => '>='
-                        )
-                        ),
-                        'meta_key' => 'start_date',
-                        'orderby' => 'meta_value',
-                        'order' => 'ASC'
-                ));
+
     while ($q->have_posts()) {
         $q->the_post();
         $cats = get_the_category(get_the_ID());
@@ -73,7 +60,6 @@
     }
     ?>
         </div>
-        <div class="text-center"><a href="/news/" class="btn btn-default">Read more</a></div>
     </div>
 </section>
 <?php
@@ -118,4 +104,16 @@ add_action('wp_footer', function () {
 </script>
 <?php
 });
+
+    }
+}
+
+if ($showForm == true) {
+    ?>
+    <div class="container-xl hide-me">
+        <h2 class="lined has-donate-color">Volunteer</h2>
+        <p>To register your interest in future events, please fill out the form below or email us.</p>
+    </div>
+    <?php
+}
     ?>
