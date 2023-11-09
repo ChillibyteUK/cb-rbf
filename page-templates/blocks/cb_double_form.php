@@ -78,7 +78,7 @@ $email = get_field('email') ?: get_field('email','options');
     </form>
 </div>
 
-<div id="volunteerForm" class="d-none">
+<div id="volunteerForm" class="hideme">
     <h2 class="has-donate-color lined">I Want to Volunteer</h2>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
         <input type="hidden" name="oid" value="00D8d000005zqa5">
