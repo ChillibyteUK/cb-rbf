@@ -12,33 +12,13 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "75",
                 "class": "",
                 "id": ""
             },
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
-        },
-        {
-            "key": "field_654b9a0e04a71",
-            "label": "Subject",
-            "name": "subject",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_654b9a1904a72",
@@ -50,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "25",
                 "class": "",
                 "id": ""
             },
@@ -66,12 +46,32 @@
             "custom_choice_button_text": "Add new choice"
         },
         {
+            "key": "field_654b9a0e04a71",
+            "label": "Subject",
+            "name": "subject",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Defaults to 'General Enquiry'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "General Enquiry",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_654b9a6206f0e",
             "label": "Email",
             "name": "email",
             "aria-label": "",
             "type": "text",
-            "instructions": "",
+            "instructions": "Destination email address. Accepts comma-separated list if multiple destinations are required. Defaults to the 'email' value set in Site-Wide Settings.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -104,5 +104,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699453551
+    "modified": 1699526298
 }
