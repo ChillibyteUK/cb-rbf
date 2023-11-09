@@ -8,6 +8,16 @@ $page = htmlspecialchars(get_the_title(), ENT_QUOTES);
 $email = get_field('email') ?: get_field('email','options');
 
 ?>
+<style>
+#attendForm, #volunteerForm {
+    transition: visibility 0s, opacity 0.5s linear;
+}
+.hideme {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+</style>
 <section class="contact pb-5 <?=$classes?> <?=$container?>">
 
 <div class="pt-5">
@@ -15,7 +25,7 @@ $email = get_field('email') ?: get_field('email','options');
     <div class="btn btn-primary" role="button" id="volunteerBtn">Volunteer</div>
 </div>
 
-<div id="attendForm" class="d-none">
+<div id="attendForm" class="hideme">
     <h2 class="has-donate-color lined">I Want to Attend</h2>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
         <input type="hidden" name="oid" value="00D8d000005zqa5">
@@ -140,14 +150,14 @@ const volunteerForm = document.getElementById('volunteerForm');
 // Click event listener for both buttons
 function handleButtonClick(event) {
     // Hide all forms initially
-    attendForm.classList.add('d-none');
-    volunteerForm.classList.add('d-none');
+    attendForm.classList.add('hideme');
+    volunteerForm.classList.add('hideme');
 
     // Determine which button was clicked
     if (event.target === attendBtn) {
-        attendForm.classList.remove('d-none');
+        attendForm.classList.remove('hideme');
     } else if (event.target === volunteerBtn) {
-        volunteerForm.classList.remove('d-none');
+        volunteerForm.classList.remove('hideme');
     }
 }
 
