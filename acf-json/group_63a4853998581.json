@@ -12,11 +12,10 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 0,
             "display_format": "jS F, Y",
             "return_format": "jS F, Y",
             "first_day": 1
@@ -31,14 +30,38 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
-            "relevanssi_exclude": 0,
             "display_format": "jS F, Y",
             "return_format": "jS F, Y",
             "first_day": 1
+        },
+        {
+            "key": "field_657864b99ff34",
+            "label": "Volunteers Needed?",
+            "name": "volunteers_needed",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes",
+                "No": "No"
+            },
+            "default_value": "No",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -59,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691746560
+    "modified": 1702389056
 }
