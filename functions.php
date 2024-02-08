@@ -99,3 +99,13 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 //     $args['has_archive'] = true;
 //     return $args;
 // };
+
+
+
+//Exclude the volunteer tagged posts from index.php
+function exclude_posts( $query ) { 
+	if ( $query->is_home() ) {  
+		$query->set( 'tag__not_in', array( 21 ) ); 
+	}
+} 
+add_action( 'pre_get_posts', 'exclude_posts' );
