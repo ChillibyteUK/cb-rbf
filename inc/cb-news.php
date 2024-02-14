@@ -133,6 +133,7 @@ function upcoming_events(){
         'posts_per_page' => -1,
         'post_type' => 'post',
         'post_status' => 'publish',
+        'tag__not_in' => 21,
         'tax_query' => array( 
             array(
                 'taxonomy' => 'category',
