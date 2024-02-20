@@ -97,7 +97,7 @@ function jobs_func($atts) {
         wp_reset_postdata();
     }
     else {
-        echo 'We do not have any positions available at this time. Check back later to see new postings.';
+        echo 'Thank you for your interest in joining the RBF team. There are currently no roles available at this time. However, if you want to get involved, please take a look at our volunteer opportunities.';
     }
     
     ?>
