@@ -13,8 +13,10 @@ $title = get_field('title') ?: 'Related News &amp; Events';
                 'post_type' => 'post',
                 'posts_per_page' => -1,
                 'post_status' => 'publish',
-                'tag__and' => $tag
-
+                'tag__and' => $tag,
+                'meta_key' => 'start_date',
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
             ));
             while ($q->have_posts()) {
                 $q->the_post();
