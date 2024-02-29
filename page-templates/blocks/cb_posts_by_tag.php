@@ -11,7 +11,7 @@ $title = get_field('title') ?: 'Related News &amp; Events';
             <?php
             $q = new WP_Query(array(
                 'post_type' => 'post',
-                'posts_per_page' => '6',
+                'posts_per_page' => -1,
                 'post_status' => 'publish',
                 'tag__and' => $tag
 
@@ -21,39 +21,21 @@ $title = get_field('title') ?: 'Related News &amp; Events';
                 $cats = get_the_category(get_the_ID());
                 $cat = $cats[0]->slug;
                 ?>
-
-<?php
-if( get_field('show_excerpt') ) {
-?>
-                <div class="slider__item px-3">
+                <div class="grid_item col-lg-4 col-md-6 p-0 mb-4">
                     <a href="<?=get_the_permalink(get_the_ID())?>">
-                        <div class="card card--<?=$cat?> card--<?=$theme?>">
+                        <div class="card card--<?=$theme?>">
                             <div class="news__image_container">
+                                <div class="news__flash news__flash--event">Event</div>
                                 <div class="news__image" style="background-image:url('<?=get_the_post_thumbnail_url(get_the_ID(),'large')?>')"></div>
                             </div>
                             <div class="news__inner">
-                                <h3 class="news__title"><?=get_the_title()?></h3>
+                                <h3 class="news__title mb-0"><?=get_the_title()?></h3>
+                                <div class="news__date"><?=get_field('start_date',get_the_ID())?></div>
                                 <div class="news__content">
                                     <div class="news__content__overlay"></div>
                                     <?=wp_trim_words(get_the_content(get_the_ID()),20)?>
                                 </div>
                             </div>
-                            <!-- <div class="card__link">Read more</div> -->
-                        </div>
-                    </a>
-                </div>
-<?php
-} else {
-?>
-                <?php
-                $img = get_the_post_thumbnail_url(get_the_ID(),'large');
-                ?>
-                <div class="slider__item px-3">
-                    <a href="<?=get_the_permalink()?>">
-                        <div class="card card--<?=$theme?>">
-                            <div class="card__title"><?=get_the_title()?></div>
-                            <div class="card__image" style="background-image:url(<?=$img?>)"></div>
-                            <div class="card__link">Read more</div>
                         </div>
                     </a>
                 </div>
@@ -61,9 +43,6 @@ if( get_field('show_excerpt') ) {
 }
 ?>
 
-                <?php
-            }
-            ?>
         </div>
 <?php
 if( get_field('show_read_more') ) {
