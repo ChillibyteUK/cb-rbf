@@ -11,6 +11,7 @@ $email = get_field('email') ?: get_field('email','options');
 <section class="contact pb-5 <?=$classes?> <?=$container?>">
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
         <input type="hidden" name="oid" value="00D8d000005zqa5">
+        <input type=hidden name="lead_source" value="Web"/>
         <input type="hidden" name="retURL" value="https://www.railwaybenefitfund.org.uk/thank-you/">
         <!--  <input type="hidden" name="debug" value=1>                              -->
         <!--  <input type="hidden" name="debugEmail" value="kesavag@techstorm.ie">    -->
@@ -48,10 +49,10 @@ $email = get_field('email') ?: get_field('email','options');
                 <textarea name="description" class="form-control"></textarea>
             </div>
             <div class="col-12">
-                <input type="hidden" id="00N3H0000024BZL" name="Email_Subject__c" value="<?=$subject?>">
-                <input type="hidden" id="00N3H0000024BZV" name="Page_Title_c" value="<?=$page?>">
-                <input type="hidden" name="recordType" id="recordType" value="0123H000000AViz">
-                <input type=hidden id="00N3H0000024ZKT" name="Destination_Email_Address__c" value="<?=$email?>">
+                <input type=hidden id="00N8d00000T8Bfb" name="Email_Subject__c" class="emailSubject" value="<?=$subject?>" />
+                <input type=hidden name="recordType" id="recordType" value="0128d000000Uabk"/>
+                <input type=hidden id="00N8d00000T8D9x" name="Page_Title__c" class="pagetitle" value="<?=$page?>" />
+                <input type=hidden id="00N8d00000T8Bfg" name="Destination_Email_Address__c" class="emailaddress" value="<?=$email?>" />
 				<input type=hidden name='captcha_settings' value='{"keyname":"RBF","fallback":"true","orgId":"00D8d000005zqa5","ts":""}'>
                 <div class="g-recaptcha mb-4" data-sitekey="6Lc7o5MlAAAAAJRnKtLRQWRMsueVr6B3aP0wMX4W"></div>
                 <button type="submit" name="submit" class="btn btn-default">Submit</button>
