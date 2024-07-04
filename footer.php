@@ -142,7 +142,7 @@ if (get_field('gtm_property', 'options')) {
             <div class="modal-body">
                 <div id="CAFDonateWidgetContainer"></div>
                 <script type="text/javascript">
-                    var caf_BeneficiaryCampaignId=23368;
+                    var caf_BeneficiaryCampaignId=23903;
                     document.write(unescape('%3Cscript id="CAFDonateWidgetLoader_script" src="https://cafdonate.cafonline.org/js/CAF.DonateWidgetLoader_script.js" type="text/javascript"%3E%3C/script%3E'));
                 </script>
             </div>
