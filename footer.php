@@ -154,9 +154,9 @@ if (get_field('gtm_property', 'options')) {
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.mc4wp-response')) {
         var mcModal = document.getElementById('mcModal');
-        mcModal.style.display = 'block';
-        mcModal.style.opacity = '1';
-        mcModal.style.visibility = 'visible';
+        // mcModal.style.display = 'block';
+        // mcModal.style.opacity = '1';
+        // mcModal.style.visibility = 'visible';
     }
 });
 </script>
