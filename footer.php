@@ -113,8 +113,10 @@ defined('ABSPATH') || exit;
 
     const mcstatus = document.querySelector('.modal-body .mc4wp-alert');
     if (mcstatus) {
+        console.log('mcstatus ' + mcstatus);
         const hasContent = mcstatus.textContent.trim().length
         if (hasContent  > 0) {
+            console.log('doing modal');
             const modalElement = document.getElementById('mcModal');
             const bootstrapModal = new bootstrap.Modal(modalElement);
             bootstrapModal.show();
@@ -149,17 +151,6 @@ if (get_field('gtm_property', 'options')) {
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.mc4wp-response')) {
-        var mcModal = document.getElementById('mcModal');
-        // mcModal.style.display = 'block';
-        // mcModal.style.opacity = '1';
-        // mcModal.style.visibility = 'visible';
-    }
-});
-</script>
 
 </body>
 
