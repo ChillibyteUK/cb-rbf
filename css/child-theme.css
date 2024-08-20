@@ -22601,16 +22601,6 @@ strong, b {
 #wrapper-navbar .navbar-toggler:focus {
   box-shadow: none;
 }
-#wrapper-navbar .navbar-toggler .close-icon,
-#wrapper-navbar .navbar-toggler.collapsed .close-icon {
-  display: none !important;
-}
-#wrapper-navbar .navbar-toggler:not(.collapsed) .close-icon {
-  display: inline !important;
-}
-#wrapper-navbar .navbar-toggler:not(.collapsed) .navbar-icon {
-  display: none !important;
-}
 #wrapper-navbar .btn, #wrapper-navbar body .gform_wrapper .gform_footer button, body .gform_wrapper .gform_footer #wrapper-navbar button, #wrapper-navbar .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message #wrapper-navbar a.button, #wrapper-navbar .woocommerce-info a.button, .woocommerce-info #wrapper-navbar a.button {
   font-size: 16px;
 }

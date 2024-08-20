@@ -1,6 +1,6 @@
 /*!
   * Understrap v1.1.0 (https://understrap.com)
-  * Copyright 2013-2023 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
+  * Copyright 2013-2024 The Understrap Authors (https://github.com/understrap/understrap/graphs/contributors)
   * Licensed under GPL (http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
   */
 (function (global, factory) {
@@ -9324,6 +9324,26 @@
 	    'imageFadeDuration': 300,
 	    'wrapAround': true,
 	    'disableScrolling': true
+	  });
+	  document.addEventListener('DOMContentLoaded', function () {
+	    const mcstatus = document.querySelector('.modal-body .mc4wp-alert');
+
+	    if (mcstatus) {
+	      console.log('mcstatus ' + mcstatus);
+	      const hasContent = mcstatus.textContent.trim().length;
+
+	      if (hasContent > 0) {
+	        console.log('doing modal'); // Ensure Bootstrap Modal is available
+
+	        if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+	          const modalElement = document.getElementById('mcModal');
+	          const bootstrapModal = new bootstrap.Modal(modalElement);
+	          bootstrapModal.show();
+	        } else {
+	          console.error('Bootstrap Modal is not available.');
+	        }
+	      }
+	    }
 	  });
 	})();
 

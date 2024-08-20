@@ -77,4 +77,23 @@
       'disableScrolling': true
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+      const mcstatus = document.querySelector('.modal-body .mc4wp-alert');
+      if (mcstatus) {
+          console.log('mcstatus ' + mcstatus);
+          const hasContent = mcstatus.textContent.trim().length;
+          if (hasContent > 0) {
+              console.log('doing modal');
+              // Ensure Bootstrap Modal is available
+              if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                  const modalElement = document.getElementById('mcModal');
+                  const bootstrapModal = new bootstrap.Modal(modalElement);
+                  bootstrapModal.show();
+              } else {
+                  console.error('Bootstrap Modal is not available.');
+              }
+          }
+      }
+  });
+
 })();

@@ -211,6 +211,16 @@ function wd_gf_update_submit_button($button_input, $form)
 add_filter('gform_submit_button', 'wd_gf_update_submit_button', 10, 2);
 
 
+
+function enqueue_bootstrap_and_custom_js() {
+    // Enqueue Bootstrap separately
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', array('jquery'), null, true);
+    
+    // Enqueue your custom child-theme script separately
+    wp_enqueue_script('child-theme-js', get_stylesheet_directory_uri() . '/js/child-theme.js', array('jquery', 'bootstrap-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_bootstrap_and_custom_js');
+
 function cb_theme_enqueue()
 {
     $the_theme = wp_get_theme();
