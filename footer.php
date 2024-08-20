@@ -153,8 +153,10 @@ if (get_field('gtm_property', 'options')) {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.mc4wp-response')) {
-        var myModal = new bootstrap.Modal(document.getElementById('mcModal'));
-        myModal.show();
+        var myModal = document.getElementById('mcModal');
+        modal.style.display = 'block';
+        modal.style.opacity = '1';
+        modal.style.visibility = 'visible';
     }
 });
 </script>
