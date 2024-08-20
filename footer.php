@@ -109,6 +109,14 @@ add_action('wp_footer',function() {
     ?>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    if (typeof bootstrap !== 'undefined' && typeof bootstrap.Modal !== 'undefined') {
+        console.log('Bootstrap Modal is available');
+    } else {
+        console.error('Bootstrap Modal is not available');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     const mcstatus = document.querySelector('.modal-body .mc4wp-alert');
     if (mcstatus) {
         console.log('mcstatus ' + mcstatus);

@@ -35,7 +35,8 @@ function theme_enqueue_styles() {
 	// Get the theme data.
 	$the_theme = wp_get_theme();
 
-	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	// $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$suffix = '';
 	// Grab asset urls.
 	$theme_styles  = "/css/child-theme{$suffix}.css";
 	$theme_scripts = "/js/child-theme{$suffix}.js";
