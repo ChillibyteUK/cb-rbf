@@ -104,13 +104,10 @@ defined('ABSPATH') || exit;
 <!-- script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script -->
 
 
+<?php
+add_action('wp_footer',function() {
+    ?>
 <script>
-    // AOS.init({
-    //     duration: 1000,
-    //     once: true,
-    // });
-
-
     const mcstatus = document.querySelector('.modal-body .mc4wp-alert');
     if (mcstatus) {
         console.log('mcstatus ' + mcstatus);
@@ -123,6 +120,9 @@ defined('ABSPATH') || exit;
         }
     }
 </script>
+    <?php
+},9999);
+?>
 <?php wp_footer();
 if (get_field('gtm_property', 'options')) {
     ?>
